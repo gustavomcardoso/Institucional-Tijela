@@ -1,1 +1,1 @@
-# tigela
+# Tigela [ http://tigela.co/ ]
