@@ -1,0 +1,34 @@
+$white: #fff;
+$teal: #A4F7EA;
+$purple: #CBB0F6;
+$pink: #FFA0C4;
+
+
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$xs: 0px;
+
+
+@font-face {
+    font-family: 'Calibre';
+    src: url(../fonts/CalibreRegular.woff) format("woff");
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Calibre';
+    src: url(../fonts/CalibreSemibold.woff) format("woff");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Triade';
+    src: url(../fonts/Triade-Upright.woff) format("woff");
+}
+
+$Calibre: 'Calibre';
+$Triade: 'Triade';
+
+
+$transition: .25s ease-in-out;

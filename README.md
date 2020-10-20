@@ -1,1 +1,3 @@
-# Tigela [ http://tigela.co/ ]
+# CBE SOLAR
+
+Theme WP
