@@ -22,7 +22,7 @@ function browser() {
     connect.server({}, function() {
         browserSync({
             files: ["assets/scss/*.scss", "assets/js/*.js", "*.php"],
-            proxy: 'https://192.168.15.13/cadeiradepraia/' // Link do Wordpress
+            proxy: 'https://192.168.15.10/wordpress/' // Link do Wordpress
         });
     });
 }

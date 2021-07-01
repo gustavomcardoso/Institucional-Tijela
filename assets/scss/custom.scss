@@ -4,3 +4,11 @@
   }
 }
 
+
+nav {
+  .collapse:not(.show) {
+    display: block;
+    opacity: 0;
+
+  }
+}

@@ -93,6 +93,24 @@ a:focus {
 }
 
 @media (min-width: $xs) {
+  nav {
+    background-color: $black;
+  }
+  .effect-menu {
+    .navbar-brand {
+      position: relative;
+      overflow: hidden;
+      width: 160px;
+      height: 60px;
+
+      img {
+        position: absolute;
+        top: -70px;
+        left: -50px;
+        max-width: 200px;
+      }
+    }
+  }
   .btn-default {
     position: relative;
     &:before {
@@ -121,7 +139,66 @@ a:focus {
     }
   }
 
+  #btn-nav {
+    cursor: pointer;
+    width: 28px;
+    z-index: 2;
+    background: transparent;
+    transition: opacity 0.3s ease-out;
+    padding: 0px 0.2em;
+    display: inline-block;
+    border: none;
+    margin-right: 25px;
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 1;
+      outline: none;
+    }
+    div {
+      width: 28px;
+      height: 4px;
+      background: white;
+      margin: 4px 0;
+      transition: all 0.3s;
+      backface-visibility: hidden;
+    }
+  }
+
+  #btn-nav.on .one {
+    background: $black;
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  #btn-nav.on .two {
+    opacity: 0;
+  }
+
+  #btn-nav.on .three {
+    background: $black;
+    transform: rotate(-45deg) translate(5px, -6px);
+  }
+
   #navtigela {
+    display: block;
+    opacity: 0;
+    top: -200px;
+    right: -200px;
+    position: absolute;
+    background-color: $black;
+    width: 200px;
+    transition: all 0.5s ease-in-out;
+    &.open {
+      background-color: white;
+      opacity: 1;
+      top: 0;
+      right: 0;
+      .nav-item {
+        .nav-link {
+          color: $black;
+        }
+      }
+    }
     .nav-item {
       padding: 0 16px;
       .nav-link {
@@ -131,9 +208,75 @@ a:focus {
       }
     }
   }
+
   header {
-    .row {
-      min-height: 850px;
+    overflow: hidden;
+    max-height: 100vh;
+    position: relative;
+    .box-play {
+      width: 100%;
+      height: 100%;
+      display: block;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $black;
+        opacity: 0.3;
+      }
+      .button-play {
+        position: relative;
+        font-family: $Triade;
+        color: white;
+        top: 50%;
+        left: 47%;
+        text-transform: uppercase;
+        font-weight: 800;
+      }
+    }
+    iframe {
+      width: 100%;
+      height: 106vh;
+      display: block;
+      top: 0;
+    }
+  }
+
+  .vitrine {
+    display: block;
+    .vitrine-img {
+      img {
+        width: 100%;
+      }
+    }
+    &#second-vitrine {
+      margin-top: 120px;
+      .vitrine-content {
+        > div {
+          left: 0;
+          bottom: 60px;
+        }
+      }
+    }
+    .vitrine-content {
+      width: 100%;
+      height: 100%;
+      > div {
+        position: absolute;
+        right: 0;
+        bottom: 60px;
+        h3 {
+          font-family: $Triade;
+          font-size: 4.2rem;
+        }
+        legend {
+          font-size: 2rem;
+        }
+      }
     }
   }
 }
@@ -178,34 +321,6 @@ a:focus {
     }
   }
 
-  .vitrine-head-box {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 500px;
-    background-color: red;
-    h3 {
-      font-family: $Triade;
-      font-weight: 700;
-      font-size: 4rem;
-      padding-bottom: 12px;
-    }
-    legend {
-      font-size: 3rem;
-    }
-    .desc-right {
-      position: absolute;
-      bottom: 50px;
-      right: -220px;
-    }
-    .desc-left {
-      position: absolute;
-      bottom: 50px;
-      left: -220px;
-      text-align: right;
-    }
-  }
-
   #scene-header {
     position: relative;
     z-index: -1;
@@ -215,7 +330,7 @@ a:focus {
       height: 550px;
       position: absolute;
       display: block;
-  
+
       &.first {
         background-color: white;
         margin-bottom: -260px;
