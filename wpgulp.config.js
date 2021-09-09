@@ -12,7 +12,7 @@
 // Local project URL of your already running WordPress site.
 // > Could be something like "wpgulp.local" or "localhost"
 // > depending upon your local WordPress setup.
-const projectURL = 'localhost/wordpress';
+const projectURL = 'localhost/2021';
 
 // Theme/Plugin URL. Leave it like it is; since our gulpfile.js lives in the root folder.
 const productURL = './';
@@ -37,7 +37,7 @@ const precision = 10;
 const jsVendorSRC = './assets/js/vendor/*.js';
 
 // Path to place the compiled JS vendors file.
-const jsVendorDestination = './assets/js/';
+const jsVendorDestination = './src/js/vendor';
 
 // Compiled JS vendors file name. Default set to vendors i.e. vendors.js.
 const jsVendorFile = 'vendor';
@@ -57,7 +57,7 @@ const jsCustomFile = 'custom';
 
 // Source folder of images which should be optimized and watched.
 // > You can also specify types e.g. raw/**.{png,jpg,gif} in the glob.
-const imgSRC = './assets/img/**/*';
+const imgSRC = './assets/imgs/**/*';
 
 // Destination folder of optimized images.
 // > Must be different from the imagesSRC folder.
@@ -65,7 +65,7 @@ const imgDST = './src/img/';
 
 // >>>>> Watch files paths.
 // Path to all *.scss files inside css folder and inside them.
-const watchStyles = './assets/css/**/*.scss';
+const watchStyles = './assets/scss/**/*.scss';
 
 // Path to all vendor JS files.
 const watchJsVendor = './assets/js/vendor/*.js';
@@ -110,25 +110,25 @@ const zipIgnoreGlob = [
 
 // >>>>> Translation options.
 // Your text domain here.
-const textDomain = 'tigela';
+const textDomain = 'layback';
 
 // Name of the translation file.
-const translationFile = 'tigela.pot';
+const translationFile = 'layback.pot';
 
 // Where to save the translation files.
 const translationDestination = './languages';
 
 // Package name.
-const packageName = 'tigela';
+const packageName = 'layback';
 
 // Where can users report bugs.
-const bugReport = 'https://tigela.co/contact/';
+const bugReport = 'https://layback.com/';
 
 // Last translator Email ID.
-const lastTranslator = 'Pedro Perez <pedrowperez@gmail.com>';
+const lastTranslator = 'Ahmad Awais <your_email@email.com>';
 
 // Team's Email ID.
-const team = 'Irregular House <contato@irregularhouse.com>';
+const team = 'Irrregular House <your_email@email.com>';
 
 // Browsers you care about for auto-prefixing. Browserlist https://github.com/ai/browserslist
 // The following list is set as per WordPress requirements. Though; Feel free to change.

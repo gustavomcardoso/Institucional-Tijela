@@ -1,7 +1,6 @@
 <?php
 
-/**
-      Template Name: Blog Home*/
+/** Template Name: Blog Home */
 
 $home = get_template_directory_uri();
 get_header();

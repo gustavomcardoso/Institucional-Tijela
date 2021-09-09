@@ -1,7 +1,7 @@
 <?php
 
 get_header();
-include(TEMPLATEPATH . '/nav.php');
+include get_template_directory() . ('/templates/nav.php');
 
 ?>
 

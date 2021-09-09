@@ -1,13 +1,14 @@
+var $ = jQuery;
+
 const containerWidth = $(window).width();
-const sceneBox = $("#scene-header-box").get(0);
+const sceneBox = document.getElementById("scene-header-box");
 const parallaxInstanceBox = new Parallax(sceneBox);
 
 const mobile = containerWidth <= 992;
-console.log(mobile);
 
-const firstScene = $("#first-vitrine").get(0);
-const secondScene = $("#second-vitrine").get(0);
-const aboutScene = $('#first-section').get(0);
+const firstScene = document.getElementById("first-vitrine");
+const secondScene = document.getElementById("second-vitrine");
+const aboutScene = document.getElementById('first-section');
 
 const firstParallax = new Parallax(firstScene, {
   pointerEvents: true
