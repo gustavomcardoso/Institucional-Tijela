@@ -2,25 +2,39 @@
 
 var $ = jQuery;
 var containerWidth = $(window).width();
-var sceneBox = document.getElementById("scene-header-box");
-var parallaxInstanceBox = new Parallax(sceneBox);
 var mobile = containerWidth <= 992;
-var firstScene = document.getElementById("first-vitrine");
-var secondScene = document.getElementById("second-vitrine");
-var aboutScene = document.getElementById('first-section');
-var firstParallax = new Parallax(firstScene, {
-  pointerEvents: true
-});
-var aboutParallax = new Parallax(aboutScene, {
-  pointerEvents: true,
-  invertX: false,
-  calibrateX: true
-});
-var secondParallax = new Parallax(secondScene, {
-  pointerEvents: true,
-  invertX: false,
-  invertY: false
-});
+
+if (!mobile) {
+  var sceneBox = document.getElementById("scene-header-box");
+  var firstScene = document.getElementById("first-vitrine");
+  var secondScene = document.getElementById("second-vitrine");
+  var aboutScene = document.getElementById('first-section');
+  var verScene = document.getElementById('vermais');
+  var sobreScene = document.getElementById('palco-about');
+  var parallaxInstanceBox = new Parallax(sceneBox);
+  var firstParallax = new Parallax(firstScene, {
+    pointerEvents: true
+  });
+  var sobreParallax = new Parallax(sobreScene, {
+    pointerEvents: true
+  });
+  var aboutParallax = new Parallax(aboutScene, {
+    pointerEvents: true,
+    invertX: false,
+    calibrateX: true
+  });
+  var VerParallax = new Parallax(verScene, {
+    pointerEvents: true,
+    invertX: false,
+    calibrateX: true
+  });
+  var secondParallax = new Parallax(secondScene, {
+    pointerEvents: true,
+    invertX: false,
+    invertY: false
+  });
+}
+
 document.getElementById("btn-nav").addEventListener("click", changeONOf);
 
 function changeONOf() {
@@ -34,26 +48,36 @@ function changeONOf() {
     menu.classList.remove("open");
     btn.classList.remove("on");
   }
-} // const bgAgronegocioVG = document.querySelector('#geral-agronegocio > #bg');
-// const estabilidadeAgronegocioVG = document.querySelector('#geral-agronegocio > #estabilidade');
-// const economiaAgronegocioVG = document.querySelector('#geral-agronegocio > #economia');
-// const yellowestabilidadeAgronegocioVG = document.querySelector('#geral-agronegocio > #yellowestabilidadeAgronegocioSVG');
-// const yelloweconomiaAgronegocioVG = document.querySelector('#geral-agronegocio > #yelloweconomiaAgronegocioSVG');
-// const tlestabilidadeAgronegocio = new TimelineLite();
-// tlestabilidadeAgronegocio
-//     .to(yellowestabilidadeAgronegocioVG, .35, {
-//         opacity: .8,
-//     })
-//     .to(estabilidadeAgronegocioVG, .35, {
-//         opacity: 1,
-//         yoyo: true
-//     }, "-=0.75")
-// tlestabilidadeAgronegocio.pause();
-// $(estabilidadeAgronegocioVG).hover(function () {
-//     tlestabilidadeAgronegocio.play();
-//     $('#infoAgronegocio h2').html('Economia');
-//     $('#infoAgronegocio p').html('');
-// }, function () {
-//     tlestabilidadeAgronegocio.reverse();
-// }
-// );
+}
+
+document.getElementById('scene-header-box').addEventListener('click', modifyTo);
+
+function modifyTo() {
+  var palco = document.getElementById('scene-header-box');
+  var assistir = palco.classList.contains('assistir');
+  palco.innerHTML = '<div class="container" data-depth="0.2" style="transform: translate3d(-22.2px, -1.5px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><iframe src="https://player.vimeo.com/video/563034387?h=82e82628b8&autoplay=1&title=0&byline=0&portrait=0&background=1&muted=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div> <div class="box-play" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"></div>';
+  palco.classList.add('assistir');
+  $('.arrow-down').hide();
+
+  if (assistir) {
+    palco.innerHTML = '<div class="container" data-depth="0.2" style="transform: translate3d(-22.2px, -1.5px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><iframe src="https://player.vimeo.com/video/563034387?autoplay=1&loop=1&autopause=0&title=0&byline=0&background=1&muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-depth="0.4"></iframe></div><div class="box-play" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"><a class="button-play"> Assista o Vídeo</a></div>';
+    palco.classList.remove('assistir');
+    $('.arrow-down').show();
+  }
+}
+
+;
+$('#modal-0').on('show.bs.modal', function (e) {
+  var link = $('#btn-play').attr('link');
+  $('#modal-0 iframe').attr('src', link);
+});
+$('#modal-0').on('hide.bs.modal', function (e) {
+  $('#modal-0 iframe').attr('src', '');
+});
+$('#modal-1').on('show.bs.modal', function (e) {
+  var link = $('#btn-play2').attr('link');
+  $('#modal-1 iframe').attr('src', link);
+});
+$('#modal-1').on('hide.bs.modal', function (e) {
+  $('#modal-1 iframe').attr('src', '');
+});

@@ -814,7 +814,10 @@ a.text-dark:hover,a.text-dark:focus{color:#121416 !important}
 .bdc-black{border-color:#000 !important}
 .bdc-black-event:hover,.bdc-black-event:active,.bdc-black-event:focus{border-color:#000 !important}
 nav .collapse:not(.show){display:block;opacity:0}
+.purple{color:#cbb0f6 !important}
+.aqua{color:#a4f7ea !important}
 body{font-family:"Calibre";overflow-x:hidden;text-rendering:optimizeLegibility !important;-webkit-font-smoothing:antialiased !important;text-rendering:optimizeLegibility !important;-webkit-font-smoothing:antialiased !important;background-color:black}
+#scene-header-box{pointer-events:auto !important}
 .arrow-down svg{position:relative;-webkit-animation:arrowDown 2.5s ease-in-out infinite;animation:arrowDown 2.5s ease-in-out infinite}
 .arrow-down svg path{-webkit-transition:.35s ease;transition:.35s ease}
 .arrow-down svg:hover path{fill:#ffa0c4}
@@ -830,8 +833,11 @@ b,strong{font-weight:900}
 .italic{font-style:italic}
 a,span,p,h1,h2,h3,h4{margin:0;padding:0}
 a,a:hover,a:active,a:focus{cursor:pointer;text-decoration:none}
-.rotate-to-right{-webkit-animation-name:rotating;animation-name:rotating;-webkit-animation-duration:3s;animation-duration:3s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;transform-box:fill-box;-webkit-transform-origin:center center;transform-origin:center center}
-.rotate-to-left{-webkit-animation-name:rotating;animation-name:rotating;-webkit-animation-duration:3s;animation-duration:3s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;transform-box:fill-box;animation-direction:reverse;-webkit-transform-origin:center center;transform-origin:center center}
+.rotate-to-right{-webkit-animation-name:rotating;animation-name:rotating;-webkit-animation-duration:3s;animation-duration:3s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;transform-box:fill-box;-webkit-transform-origin:center center;transform-origin:center center;animation-timing-function:linear;-webkit-animation-timing-function:linear;-o-animation-timing-function:linear;-ms-animation-timing-function:linear;-moz-animation-timing-function:linear}
+.rotate-to-left{-webkit-animation-name:rotating;animation-name:rotating;-webkit-animation-duration:3s;animation-duration:3s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;transform-box:fill-box;animation-direction:reverse;-webkit-transform-origin:center center;transform-origin:center center;animation-timing-function:linear;-webkit-animation-timing-function:linear;-o-animation-timing-function:linear;-ms-animation-timing-function:linear;-moz-animation-timing-function:linear}
+#vermais{position:relative !important}
+#vermais .about-pattern svg{position:absolute !important}
+#vermais .about-pattern svg:first-child{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
 @media(prefers-reduced-motion:reduce){.form-control{-webkit-transition:none;transition:none}
 .btn{-webkit-transition:none;transition:none}
 .fade{-webkit-transition:none;transition:none}
@@ -858,8 +864,11 @@ nav{background-color:#000}
 header{overflow:hidden;max-height:100vh;position:relative}
 header .box-play{width:100%;height:100%;display:block}
 header .box-play:before{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:.3}
-header .box-play .button-play{position:relative;font-family:"Triade";color:white;top:50%;left:47%;text-transform:uppercase;font-weight:800}
+header .box-play .button-play{position:relative;font-family:"Triade";color:white;top:50%;left:47%;text-transform:uppercase;font-weight:800;cursor:pointer;padding:0;margin-bottom:.5rem;font-size:1.5rem}
+header .box-play .button-play:hover,header .box-play .button-play:focus{color:white;text-decoration:none;-webkit-box-shadow:none;box-shadow:none;border:0}
 header iframe{width:100%;height:106vh;display:block;top:0}
+.palcoheader{margin-top:26px}
+.palcoheader iframe{height:90vh;width:100%}
 .vitrine{display:block}
 .vitrine .vitrine-img img{width:100%}
 .vitrine#second-vitrine{margin-top:120px}
@@ -868,6 +877,15 @@ header iframe{width:100%;height:106vh;display:block;top:0}
 .vitrine .vitrine-content>div{position:absolute;right:0;bottom:60px}
 .vitrine .vitrine-content>div h3{font-family:"Triade";font-size:4.2rem}
 .vitrine .vitrine-content>div legend{font-size:2rem}
+.btn-modal{background-color:transparent;border:0;color:white;width:30px;height:30px;background-image:url(../../src/img/close-white.svg)}
+.btn-modal:focus{outline:0}
+.ver-mais-footer{height:300px}
+.ver-mais-footer p{font-family:Triade;font-size:37px;height:87.82px;text-align:center;color:#cbb0f6}
+#footer svg{fill:#cbb0f6}
+#footer p{font-size:13px;color:#cbb0f6}
+#palco-about h1{color:#cbb0f6;font-size:23px;line-height:23px;text-align:center}
+#palco-about h2{font-size:36px;line-height:36px;color:white;font-weight:bold}
+#palco-about p{font-size:22px;line-height:26px;color:white}
 }@media(min-width:576px){.container{max-width:540px}
 .col-sm{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}
 .col-sm-auto{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}
@@ -1469,7 +1487,8 @@ header iframe{width:100%;height:106vh;display:block;top:0}
 .text-lg-center{text-align:center !important}
 .vitrine-box{width:100%;background-color:red;height:300px;display:block;position:relative}
 .vitrine-box:hover .desc{opacity:1}
-.vitrine-box .desc{-webkit-transition:.25s ease-in-out;transition:.25s ease-in-out;opacity:0;background-color:#00000069;position:absolute;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;text-align:center}
+.vitrine-box img{width:100%;height:100%}
+.vitrine-box .desc{-webkit-transition:.25s ease-in-out;transition:.25s ease-in-out;opacity:0;background-color:#00000069;position:absolute;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;text-align:center;position:absolute;top:0}
 .vitrine-box h3{font-family:"Triade";font-weight:700;font-size:2rem;padding-bottom:12px}
 .vitrine-box legend{font-size:1.6rem}
 #scene-header{position:relative;z-index:-1}
@@ -1479,6 +1498,28 @@ header iframe{width:100%;height:106vh;display:block;top:0}
 h1{font-size:5rem}
 h2{font-size:3.6rem}
 p{font-size:1.8rem}
+.vitrine-play{width:1%;height:100%}
+.vitrine-play .btn-play-style{position:absolute;top:35%;left:300px;width:100px !important;height:100px;background-image:url(../../src/img/btn-play.svg)}
+.vitrine-play .btn-play-style:hover{background-image:url(../../src/img/btn-play2.svg)}
+.vitrine-play2{width:0;height:100%}
+.vitrine-play2 .btn-play-style{position:absolute;top:35%;left:350px;width:100px !important;height:100px;background-image:url(../../src/img/btn-play.svg)}
+.vitrine-play2 .btn-play-style:hover{background-image:url(../../src/img/btn-play2.svg)}
+.modal-video.modal-dialog{height:90%}
+.modal-video.modal-dialog .modal-content{height:100%;background-color:transparent;border:0}
+.modal-video.modal-dialog iframe{height:100%;width:100%}
+.modal-video.modal-dialog button{position:relative;bottom:100%;left:3%}
+#palco-about .container{position:relative}
+#palco-about h1{font-size:56px;line-height:66px;text-align:left}
+#palco-about .row:nth-child(1){min-height:400px}
+#palco-about .row:nth-child(1) p{max-width:540px}
+#palco-about .row:nth-child(3){min-height:700px}
+#palco-about .row:nth-child(3) p{max-width:270px}
+#palco-about .about-pattern{position:absolute;top:0}
+#palco-about .about-pattern svg{position:absolute}
+#palco-about .about-pattern:nth-child(4) svg{top:253px;left:180px;-webkit-transform:rotate(268deg);transform:rotate(268deg)}
+#palco-about .about-pattern:nth-child(5) svg{position:absolute}
+#palco-about .about-pattern:nth-child(6) svg{position:absolute}
+#palco-about .about-pattern:nth-child(7){position:absolute}
 }@media(min-width:1200px){.container{max-width:1140px}
 .col-xl{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}
 .col-xl-auto{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}
