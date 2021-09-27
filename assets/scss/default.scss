@@ -329,6 +329,8 @@ a:focus {
 
   .vitrine {
     display: block;
+    width: 775.65px;
+    height: 437.4px;
     .vitrine-img {
       img {
         width: 100%;
@@ -346,6 +348,8 @@ a:focus {
     .vitrine-content {
       width: 100%;
       height: 100%;
+      background-repeat: no-repeat;
+      
       > div {
         position: absolute;
         right: 0;
@@ -413,6 +417,66 @@ a:focus {
       color: white;
     }
   }
+
+  #palco-about {
+    position: relative;
+      div{
+        .row:nth-child(1){
+          .col-12.col-lg-5{
+            p{
+              font-size: 16px;
+              line-height: 26px;
+            }
+          }
+          .col-12.col-lg-5:nth-child(1){
+              max-width: 443px;
+            h1{
+              font-size: 26px;
+              line-height: 26px;
+              font-weight: bold;
+              text-align: center;
+            }
+          }
+        }
+        .col-12.col-lg-5:nth-child(2){
+          max-width: 540px;
+        }
+        .row:nth-child(2){
+          .col-12.col-lg-4:nth-child(1){
+            max-width: 276px;
+            margin-top: 75px;
+          }
+          .col-12.col-lg-4:nth-child(2){
+            max-width: 276px;
+            margin-top: 75px;
+          }
+          .col-12.col-lg-4:nth-child(3){
+            max-width: 276px;
+            margin-top: 75px;
+            margin-bottom: 75px;
+          }
+        }
+      }
+    }
+
+    #arch-palco{
+      .row{
+        margin-top: 9rem;
+      }
+      h2{
+        font-family: $Triade;
+        font-weight: bold;
+      }
+      p{
+        font-family: $Calibre;
+      }
+    }
+    .arch-card{
+      color: white;
+      &:hover{
+        color: white;
+      }
+    }
 
 }
 
@@ -543,55 +607,79 @@ a:focus {
   }
 
   #palco-about {
-    .container{
-      position: relative;
-    }
-    h1{
-      font-size: 56px;
-      line-height: 66px;
-      text-align: left;
-    }
-    .row:nth-child(1){
-      min-height: 400px;
-      p {
-        max-width: 540px;
+    position: relative;
+      div{
+        .row:nth-child(1){
+          .col-12.col-lg-5{
+              p{
+                font-size: 22px;
+                line-height: 26px;
+              }
+          }
+          .col-12.col-lg-5:nth-child(1){
+              max-width: 443px;
+            h1{
+              font-size: 56px;
+              line-height: 56px;
+              font-weight: bold;
+              text-align: left;
+            }
+          }
+        }
+        .col-12.col-lg-5:nth-child(2){
+          max-width: 540px;
+        }
+        .row:nth-child(2){
+          .col-12.col-lg-4:nth-child(1){
+            max-width: 276px;
+            margin-top: 250px;
+            margin-bottom: 225px;
+          }
+          .col-12.col-lg-4:nth-child(2){
+            max-width: 276px;
+            margin-top: 250px;
+            margin-bottom: 225px;
+          }
+          .col-12.col-lg-4:nth-child(3){
+            max-width: 276px;
+            margin-top: 250px;
+            margin-bottom: 225px;
+          }
+        }
       }
-    }
-    .row:nth-child(3){
-      min-height: 700px;
-      p{
-        max-width: 270px;
-      }
-    }
-    .about-pattern{
-      position: absolute;
-      top: 0;
-      svg{
+      .about-pattern{
         position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        z-index: -1;
+        svg{
+          position: absolute;
+          opacity: 1;
+          z-index: -1;
+        }
+        svg:nth-child(1){
+          top: 23%;
+          left: 20%;
+          transform: rotate(279deg);
+        }
+        svg:nth-child(2){
+          top: 40%;
+          right: 10%;
+          transform: rotate(45deg);
+        }
+        svg:nth-child(3){
+          right: 2%;
+          top: -9%;
+          transform: rotate(97deg);
+        }
+        svg:nth-child(4){
+          bottom: 0%;
+          left: 37%;
+          transform: rotate(245deg);
+        }
       }
     }
-    .about-pattern:nth-child(4){
-      svg{
-        top: 253px;
-        left: 180px;
-        transform: rotate(268deg);
-      }
-    }
-    .about-pattern:nth-child(5){
-      svg{
-        position: absolute;
-      }
-    }
-    .about-pattern:nth-child(6){
-      svg{
-        position: absolute;
-      }
-    }
-    .about-pattern:nth-child(7){
-      position: absolute;
-    }
-    
-  }
 
 }
 @media (min-width: $xl) {

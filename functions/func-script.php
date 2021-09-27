@@ -34,7 +34,11 @@ function gulp_wp_theme_scripts() {
 	wp_register_script('custom' , get_template_directory_uri() . '/src/js/custom.js' , array(), 1, 1, 1);
 	wp_enqueue_script('custom');
 
+	wp_register_script('custom' , get_template_directory_uri() . '/src/js/parallax.js' , array(), 1, 1, 1);
+	wp_enqueue_script('custom');
+
 }
+
 add_action( 'wp_enqueue_scripts', 'gulp_wp_theme_scripts' );
 
 $directory =  get_template_directory_uri();

@@ -28,13 +28,3 @@ $home = get_template_directory_uri();
         </div>
     </div>
 </nav>
-
-
-<!-- modal / sobre -->
-<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="about" aria-hidden="true">
-    <div class="modal-box"> 
-        <div class="content"> 
-
-        </div>
-    </div>
-</div>

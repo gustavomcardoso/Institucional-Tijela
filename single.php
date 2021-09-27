@@ -1,9 +1,7 @@
 <?php
 
-$home = get_template_directory_uri();
 get_header();
-
-include(TEMPLATEPATH . "/model-layout/menu.php");
+include get_template_directory() . ('/templates/nav.php');
 
 
 while (have_posts()) : the_post();

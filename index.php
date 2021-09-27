@@ -92,16 +92,14 @@ include get_template_directory() . ('/templates/nav.php');
         if ( $maxpost2-> have_posts() ) : while ( $maxpost2-> have_posts() ) : $maxpost2-> the_post();
         $do_not_duplicate[] = $post->ID;
         $custom_field = get_field('link');
+        $src = get_the_post_thumbnail_url(get_the_ID(), 'full');
       ?>
 
       <?php if ($i == 1) :  ?>
 
 
-        <div class="vitrine col-12 offset-lg-5 col-lg-7" id="second-vitrine" >
-          <div class="vitrine-img" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
-            <?php the_post_thumbnail();?>
-          </div>
-          <a href="#" class="vitrine-content" data-depth="0.8" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+        <div class="vitrine col-12 offset-lg-5 col-lg-7" id="second-vitrine">
+          <a img="<?php echo $src ?>" href="#" class="vitrine-content" data-depth="0.8" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
             <div>
               <h3 class="c-white bold"><?php the_title(); ?></h3>
               <legend class="c-white"><?php the_content(); ?></legend>
@@ -125,10 +123,7 @@ include get_template_directory() . ('/templates/nav.php');
 
       <?php else : ?>
         <div class="vitrine col-12 col-lg-7" id="first-vitrine">
-          <div class="vitrine-img" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
-            <?php the_post_thumbnail();?>
-          </div>
-          <a href="#" class="vitrine-content" data-depth="0.8" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; right: 0px; top: 0px;">
+          <a img="<?php echo $src ?>" href="#" class="vitrine-content" data-depth="0.8" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; right: 0px; top: 0px;">
             <div>
               <h3 class="c-white bold"><?php the_title(); ?></h3>
               <legend class="c-white"><?php the_content(); ?></legend>
@@ -168,13 +163,14 @@ include get_template_directory() . ('/templates/nav.php');
     <?php 
       $maxpost3 = new WP_Query( array( 'posts_per_page' => 5, 'post_type' => 'post' ) ); 
       if ( $maxpost3-> have_posts() ) : while ( $maxpost3-> have_posts() ) : $maxpost3-> the_post(); 
-      if ( in_array( $post->ID, $do_not_duplicate ) ) continue; ?>
+      if ( in_array( $post->ID, $do_not_duplicate ) ) continue; 
+      $src = get_the_post_thumbnail_url(get_the_ID(), 'full');
+      ?>
 
       <div class="col-12 col-lg-4 my-3 my-lg-0">
-        <a href="" class="vitrine-box">
-          <?php the_post_thumbnail();?>
+        <a img="<?php echo $src ?>" href="" class="vitrine-box">
           <div class="desc pt-3 pt-lg-0">
-            <h3 class="c-white"><?php the_title(); ?></h3>
+            <h3 class="c-white"><?php the_title(); ?> </h3>
             <legend class="c-white"><?php the_content(); ?></legend>
           </div>
         </a>
