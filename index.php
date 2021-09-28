@@ -30,6 +30,8 @@ include get_template_directory() . ('/templates/nav.php');
     <svg width="300" height="408" viewBox="0 0 300 408" fill="none" style="
     left: 100px;
     top: -100px;
+    position:absolute;
+    z-index:-1;
 ">
       <g clip-path="url(#clip2)" class="rotate-to-right">
         <path d="M169.975 62.3429C172.336 59.373 175.164 57.021 178.265 55.2951C182.915 52.7105 188.188 51.5424 193.374 51.8884C198.563 52.2367 203.659 54.0837 208.009 57.5415C210.91 59.8476 213.185 62.6375 214.831 65.7162C217.296 70.3333 218.337 75.6085 217.874 80.8316C217.406 86.0607 215.449 91.225 211.912 95.6807L215.884 98.8383C218.682 95.3185 220.661 91.3992 221.826 87.3406C223.577 81.2483 223.513 74.8414 221.723 68.9267C219.933 63.0121 216.403 57.5779 211.245 53.4773C207.807 50.7443 203.95 48.847 199.941 47.7653C193.919 46.1439 187.543 46.3558 181.617 48.2913C175.691 50.2269 170.204 53.9012 166.005 59.1823L169.977 62.3399L169.975 62.3429Z" fill="#CBB0F6"></path>
@@ -45,6 +47,8 @@ include get_template_directory() . ('/templates/nav.php');
     <svg width="300" height="408" viewBox="0 0 300 408" fill="none" style="
     right: 100px;
     top: 255px;
+    position:absolute;
+    z-index:-1;
 ">
       <g clip-path="url(#clip2)" class="rotate-to-right">
         <path d="M169.975 62.3429C172.336 59.373 175.164 57.021 178.265 55.2951C182.915 52.7105 188.188 51.5424 193.374 51.8884C198.563 52.2367 203.659 54.0837 208.009 57.5415C210.91 59.8476 213.185 62.6375 214.831 65.7162C217.296 70.3333 218.337 75.6085 217.874 80.8316C217.406 86.0607 215.449 91.225 211.912 95.6807L215.884 98.8383C218.682 95.3185 220.661 91.3992 221.826 87.3406C223.577 81.2483 223.513 74.8414 221.723 68.9267C219.933 63.0121 216.403 57.5779 211.245 53.4773C207.807 50.7443 203.95 48.847 199.941 47.7653C193.919 46.1439 187.543 46.3558 181.617 48.2913C175.691 50.2269 170.204 53.9012 166.005 59.1823L169.977 62.3399L169.975 62.3429Z" fill="#CBB0F6"></path>
@@ -59,6 +63,7 @@ include get_template_directory() . ('/templates/nav.php');
     </svg>
 
   </div>
+
   <div data-depth="0.2" class="container-fluid">
     <div class="row py-5" id="scene-about">
       <div class="col-12 pl-5 text-center py-5">
@@ -73,10 +78,11 @@ include get_template_directory() . ('/templates/nav.php');
         </p>
       </div>
       <div class="col-12 text-center">
-        <a href="" class="btn-default triade c-purple" data-toggle="modal" data-target="#about"> saiba mais</a>
+        <a href="<?php echo site_url('/saibamais'); ?>" class="btn-default triade c-purple"> saiba mais</a>
       </div>
     </div>
   </div>
+
 </section>
 
 
@@ -93,16 +99,17 @@ include get_template_directory() . ('/templates/nav.php');
         $do_not_duplicate[] = $post->ID;
         $custom_field = get_field('link');
         $src = get_the_post_thumbnail_url(get_the_ID(), 'full');
+        $custom_field2 = get_field('legenda');
       ?>
 
       <?php if ($i == 1) :  ?>
 
 
         <div class="vitrine col-12 offset-lg-5 col-lg-7" id="second-vitrine">
-          <a img="<?php echo $src ?>" href="#" class="vitrine-content" data-depth="0.8" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+          <a img="<?php echo $src ?>" href="<?php the_permalink(); ?>" class="vitrine-content" data-depth="0.8" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
             <div>
               <h3 class="c-white bold"><?php the_title(); ?></h3>
-              <legend class="c-white"><?php the_content(); ?></legend>
+              <legend class="c-white"><?php echo $custom_field2 ?></legend>
             </div>
           </a>
           <div class="vitrine-play2" data-depth="0.8">
@@ -123,10 +130,10 @@ include get_template_directory() . ('/templates/nav.php');
 
       <?php else : ?>
         <div class="vitrine col-12 col-lg-7" id="first-vitrine">
-          <a img="<?php echo $src ?>" href="#" class="vitrine-content" data-depth="0.8" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; right: 0px; top: 0px;">
+          <a img="<?php echo $src ?>" href="<?php the_permalink(); ?>" class="vitrine-content" data-depth="0.8" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; right: 0px; top: 0px;">
             <div>
               <h3 class="c-white bold"><?php the_title(); ?></h3>
-              <legend class="c-white"><?php the_content(); ?></legend>
+              <legend class="c-white"><?php echo $custom_field2 ?></legend>
             </div>
           </a>
           <div class="vitrine-play" data-depth="0.8">
@@ -168,10 +175,10 @@ include get_template_directory() . ('/templates/nav.php');
       ?>
 
       <div class="col-12 col-lg-4 my-3 my-lg-0">
-        <a img="<?php echo $src ?>" href="" class="vitrine-box">
+        <a img="<?php echo $src ?>" href="<?php the_permalink(); ?>" class="vitrine-box d-flex align-items-center justify-content-center">
           <div class="desc pt-3 pt-lg-0">
             <h3 class="c-white"><?php the_title(); ?> </h3>
-            <legend class="c-white"><?php the_content(); ?></legend>
+            <legend class="c-white"><?php echo $custom_field2 ?></legend>
           </div>
         </a>
       </div>
@@ -214,7 +221,7 @@ include get_template_directory() . ('/templates/nav.php');
 
     <div class="row">
       <div class="col-12 col-lg-6 offset-lg-3 d-flex justify-content-center ver-mais-footer ">
-        <a href="" class="ver-mais-footer d-flex align-items-center">
+        <a href="<?php echo site_url('/saibamais'); ?>" class="ver-mais-footer d-flex align-items-center">
           <p class="">
             Clique aqui para ver <br> mais projetos
           </p>

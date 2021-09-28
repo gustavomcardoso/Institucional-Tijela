@@ -835,9 +835,6 @@ a,span,p,h1,h2,h3,h4{margin:0;padding:0}
 a,a:hover,a:active,a:focus{cursor:pointer;text-decoration:none}
 .rotate-to-right{-webkit-animation-name:rotating;animation-name:rotating;-webkit-animation-duration:3s;animation-duration:3s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;transform-box:fill-box;-webkit-transform-origin:center center;transform-origin:center center;animation-timing-function:linear;-webkit-animation-timing-function:linear;-o-animation-timing-function:linear;-ms-animation-timing-function:linear;-moz-animation-timing-function:linear}
 .rotate-to-left{-webkit-animation-name:rotating;animation-name:rotating;-webkit-animation-duration:3s;animation-duration:3s;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;transform-box:fill-box;animation-direction:reverse;-webkit-transform-origin:center center;transform-origin:center center;animation-timing-function:linear;-webkit-animation-timing-function:linear;-o-animation-timing-function:linear;-ms-animation-timing-function:linear;-moz-animation-timing-function:linear}
-#vermais{position:relative !important}
-#vermais .about-pattern svg{position:absolute !important}
-#vermais .about-pattern svg:first-child{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
 @media(prefers-reduced-motion:reduce){.form-control{-webkit-transition:none;transition:none}
 .btn{-webkit-transition:none;transition:none}
 .fade{-webkit-transition:none;transition:none}
@@ -864,25 +861,27 @@ nav{background-color:#000}
 header{overflow:hidden;max-height:100vh;position:relative}
 header .box-play{width:100%;height:100%;display:block}
 header .box-play:before{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:.3}
-header .box-play .button-play{position:relative;font-family:"Triade";color:white;top:50%;left:47%;text-transform:uppercase;font-weight:800;cursor:pointer;padding:0;margin-bottom:.5rem;font-size:1.5rem}
+header .box-play .button-play{position:relative;font-family:"Triade";color:white;top:50%;left:18%;text-transform:uppercase;font-weight:800;cursor:pointer;padding:0;margin-bottom:.5rem;font-size:1.5rem}
 header .box-play .button-play:hover,header .box-play .button-play:focus{color:white;text-decoration:none;-webkit-box-shadow:none;box-shadow:none;border:0}
 header iframe{width:100%;height:106vh;display:block;top:0}
 .palcoheader{margin-top:26px}
 .palcoheader iframe{height:90vh;width:100%}
-.vitrine{display:block;width:775.65px;height:437.4px}
+.vitrine{display:block;min-width:320px;min-height:320px;width:100%;height:100%}
 .vitrine .vitrine-img img{width:100%}
 .vitrine#second-vitrine{margin-top:120px}
 .vitrine#second-vitrine .vitrine-content>div{left:0;bottom:60px}
-.vitrine .vitrine-content{width:100%;height:100%;background-repeat:no-repeat}
+.vitrine .vitrine-content{width:100%;height:100%;background-repeat:no-repeat;background-size:100% 100%}
 .vitrine .vitrine-content>div{position:absolute;right:0;bottom:60px}
-.vitrine .vitrine-content>div h3{font-family:"Triade";font-size:4.2rem}
-.vitrine .vitrine-content>div legend{font-size:2rem}
+.vitrine .vitrine-content>div h3{font-family:"Triade";font-size:3.2rem}
+.vitrine .vitrine-content>div legend{font-size:1.5rem}
+.vitrine-box{min-width:320px;min-height:300px;display:block}
 .btn-modal{background-color:transparent;border:0;color:white;width:30px;height:30px;background-image:url(../../src/img/close-white.svg)}
 .btn-modal:focus{outline:0}
 .ver-mais-footer{height:300px}
 .ver-mais-footer p{font-family:Triade;font-size:37px;height:87.82px;text-align:center;color:#cbb0f6}
 #footer svg{fill:#cbb0f6}
-#footer p{font-size:13px;color:#cbb0f6}
+#footer p{font-size:15px;color:#cbb0f6}
+#footer #navbrand img{max-width:150px}
 #palco-about h1{color:#cbb0f6;font-size:23px;line-height:23px;text-align:center}
 #palco-about h2{font-size:36px;line-height:36px;color:white;font-weight:bold}
 #palco-about p{font-size:22px;line-height:26px;color:white}
@@ -899,6 +898,22 @@ header iframe{width:100%;height:106vh;display:block;top:0}
 #arch-palco p{font-family:"Calibre"}
 .arch-card{color:white}
 .arch-card:hover{color:white}
+#singlepage{position:relative}
+#singlepage h1{color:white}
+#singlepage legend{max-width:301px;text-align:center;padding-top:20px;color:white}
+#singlepage p{padding-top:30px;padding-bottom:30px;color:white}
+#singlepage .single-iframe{height:600px;margin-bottom:60px}
+#singlepage .single-iframe iframe{width:100%;height:100%}
+#single-palco{position:absolute;width:100%;height:100%;z-index:-1;top:0}
+#single-palco .about-pattern{width:100%;height:100%}
+#single-palco .about-pattern svg{position:absolute}
+#single-palco .about-pattern svg:nth-child(1){bottom:2%;left:2%;-webkit-transform:rotate(320deg);transform:rotate(320deg)}
+#single-palco .about-pattern svg:nth-child(2){bottom:30%;right:2%}
+#single-palco .about-pattern svg:nth-child(3){bottom:30%;left:2%;-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+#single-palco .about-pattern svg:nth-child(4){bottom:2%;right:2%;-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+#vermais{position:relative !important}
+#vermais .about-pattern svg{position:absolute !important}
+#vermais .about-pattern svg:first-child{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
 }@media(min-width:576px){.container{max-width:540px}
 .col-sm{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}
 .col-sm-auto{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}
@@ -1117,6 +1132,7 @@ header iframe{width:100%;height:106vh;display:block;top:0}
 .text-sm-left{text-align:left !important}
 .text-sm-right{text-align:right !important}
 .text-sm-center{text-align:center !important}
+header .box-play .button-play{left:41%}
 }@media(min-width:768px){.container{max-width:720px}
 .col-md{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}
 .col-md-auto{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}
@@ -1498,7 +1514,8 @@ header iframe{width:100%;height:106vh;display:block;top:0}
 .text-lg-left{text-align:left !important}
 .text-lg-right{text-align:right !important}
 .text-lg-center{text-align:center !important}
-.vitrine-box{width:100%;background-color:red;height:300px;display:block;position:relative}
+.vitrine{width:775.65px;height:437.4px}
+.vitrine-box{width:100%;background-color:red;height:300px;display:block;position:relative;background-repeat:no-repeat;background-size:100% 100%}
 .vitrine-box:hover .desc{opacity:1}
 .vitrine-box img{width:100%;height:100%}
 .vitrine-box .desc{-webkit-transition:.25s ease-in-out;transition:.25s ease-in-out;opacity:0;background-color:#00000069;position:absolute;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;width:100%;height:100%;text-align:center;position:absolute;top:0}
@@ -1535,6 +1552,7 @@ p{font-size:1.8rem}
 #palco-about .about-pattern svg:nth-child(2){top:40%;right:10%;-webkit-transform:rotate(45deg);transform:rotate(45deg)}
 #palco-about .about-pattern svg:nth-child(3){right:2%;top:-9%;-webkit-transform:rotate(97deg);transform:rotate(97deg)}
 #palco-about .about-pattern svg:nth-child(4){bottom:0;left:37%;-webkit-transform:rotate(245deg);transform:rotate(245deg)}
+#footer .container .row .col-12:nth-child(1){height:20px}
 }@media(min-width:1200px){.container{max-width:1140px}
 .col-xl{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}
 .col-xl-auto{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}
@@ -1727,6 +1745,7 @@ p{font-size:1.8rem}
 .text-xl-right{text-align:right !important}
 .text-xl-center{text-align:center !important}
 .container{max-width:1630px}
+header .box-play .button-play{left:45%}
 }@media(max-width:1199.98px){.navbar-expand-xl>.container,.navbar-expand-xl>.container-fluid{padding-right:0;padding-left:0}
 }@media(max-width:991.98px){.navbar-expand-lg>.container,.navbar-expand-lg>.container-fluid{padding-right:0;padding-left:0}
 }@media(max-width:767.98px){.navbar-expand-md>.container,.navbar-expand-md>.container-fluid{padding-right:0;padding-left:0}

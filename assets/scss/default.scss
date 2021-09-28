@@ -296,7 +296,7 @@ a:focus {
         font-family: $Triade;
         color: white;
         top: 50%;
-        left: 47%;
+        left: 18%;
         text-transform: uppercase;
         font-weight: 800;
         cursor: pointer;
@@ -329,8 +329,10 @@ a:focus {
 
   .vitrine {
     display: block;
-    width: 775.65px;
-    height: 437.4px;
+    min-width: 320px;
+    min-height: 320px;
+    width: 100%;
+    height: 100%;
     .vitrine-img {
       img {
         width: 100%;
@@ -349,6 +351,7 @@ a:focus {
       width: 100%;
       height: 100%;
       background-repeat: no-repeat;
+      background-size: 100% 100%;
       
       > div {
         position: absolute;
@@ -356,13 +359,19 @@ a:focus {
         bottom: 60px;
         h3 {
           font-family: $Triade;
-          font-size: 4.2rem;
+          font-size: 3.2rem;
         }
         legend {
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
       }
     }
+  }
+
+  .vitrine-box{
+    min-width: 320px;
+    min-height: 300px;
+    display: block;
   }
 
   .btn-modal{
@@ -393,9 +402,13 @@ a:focus {
       fill: #CBB0F6;
     }
     p{
-      font-size: 13px;
+      font-size: 15px;
       color: #CBB0F6;
     }
+
+    #navbrand img{
+      max-width: 150px;
+  }
   }
 
   #palco-about {
@@ -478,19 +491,104 @@ a:focus {
       }
     }
 
+    #singlepage{
+      position: relative;
+      h1{
+        color: white;
+      }
+      legend{
+        max-width: 301px;
+        text-align: center;
+        padding-top: 20px;
+        color: white;
+      }
+      p{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        color: white;
+      }
+      .single-iframe{
+        height: 600px;
+        margin-bottom: 60px;
+        iframe{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    #single-palco{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      .about-pattern{
+        width: 100%;
+        height: 100%;
+        svg{
+          position: absolute;
+        }
+        svg:nth-child(1){
+          bottom: 2%;
+          left: 2%;
+          transform: rotate(320deg)
+        }
+        svg:nth-child(2){
+          bottom: 30%;
+          right: 2%;
+        }
+        svg:nth-child(3){
+          bottom: 30%;
+          left: 2%;
+          transform: rotate(180deg);
+        }
+        svg:nth-child(4){
+          bottom: 2%;
+          right: 2%;
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    #vermais{
+      position: relative !important;
+      .about-pattern{
+        svg{
+          position: absolute !important;
+        }
+        svg:first-child {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    
+
 }
 
 @media (min-width: $sm) {
+  header{
+    .box-play{
+      .button-play {
+        left: 41%;
+      }
+  }
+}
 }
 @media (min-width: $md) {
 }
 @media (min-width: $lg) {
+  .vitrine{
+    width: 775.65px;
+    height: 437.4px;
+  }
   .vitrine-box {
     width: 100%;
     background-color: red;
     height: 300px;
     display: block;
     position: relative;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     &:hover {
       .desc {
         opacity: 1;
@@ -681,18 +779,22 @@ a:focus {
       }
     }
 
+    #footer{
+      .container{
+        .row{
+          .col-12:nth-child(1){
+            height: 20px;
+          }
+        }
+      }
+    }
 }
 @media (min-width: $xl) {
-}
-
-#vermais{
-  position: relative !important;
-  .about-pattern{
-    svg{
-      position: absolute !important;
-    }
-    svg:first-child {
-      transform: rotate(180deg);
-    }
+  header{
+    .box-play{
+      .button-play {
+        left: 45%;
+      }
   }
+}
 }

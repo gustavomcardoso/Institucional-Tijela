@@ -1,5 +1,63 @@
 var $ = jQuery;
 
+const containerWidth = $(window).width(); 
+const mobile = containerWidth <= 992;
+if (!mobile) {
+  const sceneBox = document.getElementById("scene-header-box");
+
+  if(sceneBox) {
+    const firstScene = document.getElementById("first-vitrine");
+    const secondScene = document.getElementById("second-vitrine");
+    const aboutScene = document.getElementById('first-section');
+    const verScene = document.getElementById('vermais');
+    const parallaxInstanceBox = new Parallax(sceneBox);
+
+    const firstParallax = new Parallax(firstScene, {
+      pointerEvents: true
+    });
+  
+    const aboutParallax = new Parallax(aboutScene, {
+      pointerEvents: true,
+      invertX: false,
+      calibrateX: true,
+    });
+  
+    const VerParallax = new Parallax(verScene, {
+      pointerEvents: true,
+      invertX: false,
+      calibrateX: true,
+    });
+  
+    const secondParallax = new Parallax(secondScene, {
+      pointerEvents: true,
+      invertX: false,
+      invertY: false,
+    });
+
+  }
+  
+  const sobreScene = document.getElementById("palco-about")
+  if (sobreScene) {
+    const sobreParallax = new Parallax(sobreScene, {
+      pointerEvents: true,
+    });
+  }
+
+  const archScene = document.getElementById("arch-palco")
+  if (archScene) {
+    const archParallax = new Parallax(archScene, {
+      pointerEvents: true,
+    });
+  }
+
+  const singleScene = document.getElementById("single-palco")
+  if (singleScene) {
+    const singleParallax = new Parallax(singleScene, {
+      pointerEvents: true,
+    });
+  } 
+
+}
 
 
 const imgarray = $('.arch-card').each(function(){});
@@ -7,7 +65,6 @@ const imgarray2 = $('.vitrine-box').each(function(){});
 const imgarray3 = $('.vitrine-content').each(function(){});
 let i = 0
 let a = 0
-
 
 $('document').ready(function(){
   $('.arch-card').each(function(){
@@ -17,7 +74,6 @@ $('document').ready(function(){
   });
   
 });
-
 
 $('document').ready(function(){
   $('.vitrine-box').each(function(){
@@ -35,8 +91,6 @@ $('document').ready(function(){
   });
   
 });
-
-
 
 
 document.getElementById("btn-nav").addEventListener("click", changeONOf);
@@ -73,7 +127,6 @@ function modifyTo(){
 };
 
 
-
 $('#modal-0').on('show.bs.modal', function (e) {
   const link = $('#btn-play').attr('link');
   $('#modal-0 iframe').attr('src', link);
@@ -87,62 +140,9 @@ $('#modal-1').on('show.bs.modal', function (e) {
 })
 $('#modal-1').on('hide.bs.modal', function (e) {
   $('#modal-1 iframe').attr('src', '');
-
+  
 })
 
-const containerWidth = $(window).width(); 
-
-const mobile = containerWidth <= 992;
-
-if (!mobile) {
-  const sceneBox = document.getElementById("scene-header-box");
-
-  if(sceneBox) {
-    const firstScene = document.getElementById("first-vitrine");
-    const secondScene = document.getElementById("second-vitrine");
-    const aboutScene = document.getElementById('first-section');
-    const verScene = document.getElementById('vermais');
-    const parallaxInstanceBox = new Parallax(sceneBox);
-
-    const firstParallax = new Parallax(firstScene, {
-      pointerEvents: true
-    });
-  
-    const aboutParallax = new Parallax(aboutScene, {
-      pointerEvents: true,
-      invertX: false,
-      calibrateX: true,
-    });
-  
-    const VerParallax = new Parallax(verScene, {
-      pointerEvents: true,
-      invertX: false,
-      calibrateX: true,
-    });
-  
-    const secondParallax = new Parallax(secondScene, {
-      pointerEvents: true,
-      invertX: false,
-      invertY: false,
-    });
-
-  }
-  
-  const sobreScene = document.getElementById("palco-about")
-
-  if (sobreScene) {
-    const sobreParallax = new Parallax(sobreScene, {
-      pointerEvents: true,
-    });
-  }
-
-  const archScene = document.getElementById("arch-palco")
-
-  if (archScene) {
-    const archParallax = new Parallax(archScene, {
-      pointerEvents: true,
-    });
-  }
-
-}
+const link2 = $('#singlepage iframe').attr('link');
+$('#singlepage iframe').attr('src', link2);
 

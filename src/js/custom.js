@@ -1,6 +1,63 @@
 "use strict";
 
 var $ = jQuery;
+var containerWidth = $(window).width();
+var mobile = containerWidth <= 992;
+
+if (!mobile) {
+  var sceneBox = document.getElementById("scene-header-box");
+
+  if (sceneBox) {
+    var firstScene = document.getElementById("first-vitrine");
+    var secondScene = document.getElementById("second-vitrine");
+    var aboutScene = document.getElementById('first-section');
+    var verScene = document.getElementById('vermais');
+    var parallaxInstanceBox = new Parallax(sceneBox);
+    var firstParallax = new Parallax(firstScene, {
+      pointerEvents: true
+    });
+    var aboutParallax = new Parallax(aboutScene, {
+      pointerEvents: true,
+      invertX: false,
+      calibrateX: true
+    });
+    var VerParallax = new Parallax(verScene, {
+      pointerEvents: true,
+      invertX: false,
+      calibrateX: true
+    });
+    var secondParallax = new Parallax(secondScene, {
+      pointerEvents: true,
+      invertX: false,
+      invertY: false
+    });
+  }
+
+  var sobreScene = document.getElementById("palco-about");
+
+  if (sobreScene) {
+    var sobreParallax = new Parallax(sobreScene, {
+      pointerEvents: true
+    });
+  }
+
+  var archScene = document.getElementById("arch-palco");
+
+  if (archScene) {
+    var archParallax = new Parallax(archScene, {
+      pointerEvents: true
+    });
+  }
+
+  var singleScene = document.getElementById("single-palco");
+
+  if (singleScene) {
+    var singleParallax = new Parallax(singleScene, {
+      pointerEvents: true
+    });
+  }
+}
+
 var imgarray = $('.arch-card').each(function () {});
 var imgarray2 = $('.vitrine-box').each(function () {});
 var imgarray3 = $('.vitrine-content').each(function () {});
@@ -77,51 +134,5 @@ $('#modal-1').on('show.bs.modal', function (e) {
 $('#modal-1').on('hide.bs.modal', function (e) {
   $('#modal-1 iframe').attr('src', '');
 });
-var containerWidth = $(window).width();
-var mobile = containerWidth <= 992;
-
-if (!mobile) {
-  var sceneBox = document.getElementById("scene-header-box");
-
-  if (sceneBox) {
-    var firstScene = document.getElementById("first-vitrine");
-    var secondScene = document.getElementById("second-vitrine");
-    var aboutScene = document.getElementById('first-section');
-    var verScene = document.getElementById('vermais');
-    var parallaxInstanceBox = new Parallax(sceneBox);
-    var firstParallax = new Parallax(firstScene, {
-      pointerEvents: true
-    });
-    var aboutParallax = new Parallax(aboutScene, {
-      pointerEvents: true,
-      invertX: false,
-      calibrateX: true
-    });
-    var VerParallax = new Parallax(verScene, {
-      pointerEvents: true,
-      invertX: false,
-      calibrateX: true
-    });
-    var secondParallax = new Parallax(secondScene, {
-      pointerEvents: true,
-      invertX: false,
-      invertY: false
-    });
-  }
-
-  var sobreScene = document.getElementById("palco-about");
-
-  if (sobreScene) {
-    var sobreParallax = new Parallax(sobreScene, {
-      pointerEvents: true
-    });
-  }
-
-  var archScene = document.getElementById("arch-palco");
-
-  if (archScene) {
-    var archParallax = new Parallax(archScene, {
-      pointerEvents: true
-    });
-  }
-}
+var link2 = $('#singlepage iframe').attr('link');
+$('#singlepage iframe').attr('src', link2);
