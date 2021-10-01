@@ -17,7 +17,7 @@ $xs: 0px;
     font-weight: 500;
 }
 @font-face {
-    font-family: 'Calibre';
+    font-family: 'Calibre_semi';
     src: url(../../src/fonts/CalibreSemibold.woff) format("woff");
     font-weight: 700;
 }
@@ -27,6 +27,7 @@ $xs: 0px;
     src: url(../../src/fonts/Triade-Upright.woff) format("woff");
 }
 
+$Calibre_semi: 'Calibre_semi';
 $Calibre: 'Calibre';
 $Triade: 'Triade';
 

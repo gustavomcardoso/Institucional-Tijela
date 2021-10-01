@@ -101,25 +101,36 @@ function changeONOf() {
 
 var headerhome = document.getElementById('scene-header-box');
 
-if (headerhome) {
+if (headerhome && mobile !== true) {
   headerhome.addEventListener('click', modifyTo);
+}
+
+if (headerhome && mobile == true) {
+  headerhome.addEventListener('click', modifyToMobile);
 }
 
 function modifyTo() {
   var palco = document.getElementById('scene-header-box');
   var assistir = palco.classList.contains('assistir');
-  palco.innerHTML = '<div class="container" data-depth="0.2" style="transform: translate3d(-22.2px, -1.5px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><iframe src="https://player.vimeo.com/video/563034387?h=82e82628b8&autoplay=1&title=0&byline=0&portrait=0&background=1&muted=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div> <div class="box-play" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"></div>';
+  palco.innerHTML = '<div class="container" data-depth="0.2" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><iframe src="https://player.vimeo.com/video/563034387?h=82e82628b8&autoplay=1&title=0&byline=0&portrait=0&background=1&muted=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div> <div class="box-play" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"></div>';
   palco.classList.add('assistir');
   $('.arrow-down').hide();
 
   if (assistir) {
-    palco.innerHTML = '<div class="container" data-depth="0.2" style="transform: translate3d(-22.2px, -1.5px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><iframe src="https://player.vimeo.com/video/563034387?autoplay=1&loop=1&autopause=0&title=0&byline=0&background=1&muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-depth="0.4"></iframe></div><div class="box-play" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"><a class="button-play"> Assista o Vídeo</a></div>';
+    palco.innerHTML = '<div class="container" data-depth="0.2" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><iframe src="https://player.vimeo.com/video/563034387?autoplay=1&loop=1&autopause=0&title=0&byline=0&background=1&muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-depth="0.4"></iframe></div><div class="box-play" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"><a class="button-play"> Assista o Vídeo</a></div>';
     palco.classList.remove('assistir');
     $('.arrow-down').show();
   }
 }
 
-;
+function modifyToMobile() {
+  var palco = document.getElementById('scene-header-box');
+  palco.innerHTML = '<div class="container"><iframe id="iframemobile" src="https://player.vimeo.com/video/563034387?h=82e82628b8&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div> <div class="box-play" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"></div>';
+  palco.classList.add('assistir');
+  $('.box-play').hide();
+  headerhome.removeAttribute('id');
+}
+
 $('#modal-0').on('show.bs.modal', function (e) {
   var link = $('#btn-play').attr('link');
   $('#modal-0 iframe').attr('src', link);

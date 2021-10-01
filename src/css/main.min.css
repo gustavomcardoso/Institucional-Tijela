@@ -781,7 +781,7 @@ a.text-dark:hover,a.text-dark:focus{color:#121416 !important}
 .visible{visibility:visible !important}
 .invisible{visibility:hidden !important}
 @font-face{font-family:'Calibre';src:url(../../src/fonts/CalibreRegular.woff) format("woff");font-weight:500}
-@font-face{font-family:'Calibre';src:url(../../src/fonts/CalibreSemibold.woff) format("woff");font-weight:700}
+@font-face{font-family:'Calibre_semi';src:url(../../src/fonts/CalibreSemibold.woff) format("woff");font-weight:700}
 @font-face{font-family:'Triade';src:url(../../src/fonts/Triade-Upright.woff) format("woff")}
 .c-white{color:#fff !important}
 .c-white-event:hover,.c-white-event:active,.c-white-event:focus{color:#fff !important}
@@ -816,7 +816,7 @@ a.text-dark:hover,a.text-dark:focus{color:#121416 !important}
 nav .collapse:not(.show){display:block;opacity:0}
 .purple{color:#cbb0f6 !important}
 .aqua{color:#a4f7ea !important}
-body{font-family:"Calibre";overflow-x:hidden;text-rendering:optimizeLegibility !important;-webkit-font-smoothing:antialiased !important;text-rendering:optimizeLegibility !important;-webkit-font-smoothing:antialiased !important;background-color:black}
+body{font-family:"Calibre";overflow-x:hidden;text-rendering:optimizeLegibility !important;-webkit-font-smoothing:antialiased !important;text-rendering:optimizeLegibility !important;-webkit-font-smoothing:antialiased !important;background-color:#020002}
 #scene-header-box{pointer-events:auto !important}
 .arrow-down svg{position:relative;-webkit-animation:arrowDown 2.5s ease-in-out infinite;animation:arrowDown 2.5s ease-in-out infinite}
 .arrow-down svg path{-webkit-transition:.35s ease;transition:.35s ease}
@@ -861,24 +861,25 @@ nav{background-color:#000}
 header{overflow:hidden;max-height:100vh;position:relative}
 header .box-play{width:100%;height:100%;display:block}
 header .box-play:before{content:"";display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;opacity:.3}
-header .box-play .button-play{position:relative;font-family:"Triade";color:white;top:50%;left:18%;text-transform:uppercase;font-weight:800;cursor:pointer;padding:0;margin-bottom:.5rem;font-size:1.5rem}
+header .box-play .button-play{position:absolute;font-family:"Triade";color:white;top:50%;left:18%;text-transform:uppercase;font-weight:800;cursor:pointer;padding:0;margin-bottom:.5rem;font-size:1.5rem}
 header .box-play .button-play:hover,header .box-play .button-play:focus{color:white;text-decoration:none;-webkit-box-shadow:none;box-shadow:none;border:0}
-header iframe{width:100%;height:106vh;display:block;top:0}
+header iframe{display:block;width:700px;height:106vh;overflow:hidden;position:relative;left:-50%;top:-50%}
 .palcoheader{margin-top:26px}
 .palcoheader iframe{height:90vh;width:100%}
 .vitrine{display:block;min-width:320px;min-height:320px;width:100%;height:100%}
 .vitrine .vitrine-img img{width:100%}
 .vitrine#second-vitrine{margin-top:120px}
-.vitrine#second-vitrine .vitrine-content>div{left:0;bottom:60px}
-.vitrine .vitrine-content{width:100%;height:100%;background-repeat:no-repeat;background-size:100% 100%}
-.vitrine .vitrine-content>div{position:absolute;right:0;bottom:60px}
+.vitrine#second-vitrine .vitrine-content>div{left:20px;bottom:60px}
+.vitrine .vitrine-content{min-width:290px;min-height:290px;background-repeat:no-repeat;background-size:100% 100%;display:block}
+.vitrine .vitrine-content>div{position:absolute;right:20px;bottom:60px}
 .vitrine .vitrine-content>div h3{font-family:"Triade";font-size:3.2rem}
 .vitrine .vitrine-content>div legend{font-size:1.5rem}
-.vitrine-box{min-width:320px;min-height:300px;display:block}
+.vitrine-box{min-width:100%;min-height:300px;display:block}
 .btn-modal{background-color:transparent;border:0;color:white;width:30px;height:30px;background-image:url(../../src/img/close-white.svg)}
 .btn-modal:focus{outline:0}
 .ver-mais-footer{height:300px}
 .ver-mais-footer p{font-family:Triade;font-size:37px;height:87.82px;text-align:center;color:#cbb0f6}
+#footer{margin-top:20px;overflow:hidden}
 #footer svg{fill:#cbb0f6}
 #footer p{font-size:15px;color:#cbb0f6}
 #footer #navbrand img{max-width:150px}
@@ -902,7 +903,7 @@ header iframe{width:100%;height:106vh;display:block;top:0}
 #singlepage h1{color:white}
 #singlepage legend{max-width:301px;text-align:center;padding-top:20px;color:white}
 #singlepage p{padding-top:30px;padding-bottom:30px;color:white}
-#singlepage .single-iframe{height:600px;margin-bottom:60px}
+#singlepage .single-iframe{height:300px;margin-top:60px;margin-bottom:60px}
 #singlepage .single-iframe iframe{width:100%;height:100%}
 #single-palco{position:absolute;width:100%;height:100%;z-index:-1;top:0}
 #single-palco .about-pattern{width:100%;height:100%}
@@ -914,6 +915,9 @@ header iframe{width:100%;height:106vh;display:block;top:0}
 #vermais{position:relative !important}
 #vermais .about-pattern svg{position:absolute !important}
 #vermais .about-pattern svg:first-child{-webkit-transform:rotate(180deg);transform:rotate(180deg)}
+.desc h3{font-family:"Calibre";font-weight:bold}
+.desc legend{font-family:"Calibre"}
+#iframemobile{width:100%;left:0;top:0}
 }@media(min-width:576px){.container{max-width:540px}
 .col-sm{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}
 .col-sm-auto{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}
@@ -1553,6 +1557,11 @@ p{font-size:1.8rem}
 #palco-about .about-pattern svg:nth-child(3){right:2%;top:-9%;-webkit-transform:rotate(97deg);transform:rotate(97deg)}
 #palco-about .about-pattern svg:nth-child(4){bottom:0;left:37%;-webkit-transform:rotate(245deg);transform:rotate(245deg)}
 #footer .container .row .col-12:nth-child(1){height:20px}
+header iframe{display:block;width:100%;height:106vh;overflow:hidden;position:relative;left:0;top:0}
+.vitrine#second-vitrine .vitrine-content>div{left:-60px}
+.vitrine .vitrine-content{min-height:435px}
+.vitrine .vitrine-content>div{right:-120px}
+#singlepage .single-iframe{margin-top:30px;height:600px}
 }@media(min-width:1200px){.container{max-width:1140px}
 .col-xl{-ms-flex-preferred-size:0;flex-basis:0;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;max-width:100%}
 .col-xl-auto{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;width:auto;max-width:100%}

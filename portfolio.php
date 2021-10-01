@@ -27,7 +27,7 @@ include get_template_directory() . ('/templates/nav.php');
                 ?>
 
                 <div class="col-12 col-lg-6 mx-auto my-3">
-                    <a img="<?php echo $src ?>" href="" class="arch-card vitrine-box">
+                    <a img="<?php echo $src ?>" href="<?php the_permalink(); ?>" class="arch-card vitrine-box">
                         <div class="arch-text desc">
                             <h2><?php the_title(); ?></h2>
                             <p> <?php echo $custom_field2 ?> </p>

@@ -16,10 +16,10 @@ $home = get_template_directory_uri();
         <div id="navtigela">
             <ul class="navbar-nav ml-auto py-3 px-4 px-lg-0 py-lg-3">
                 <li class="nav-item active">
-                    <a class="nav-link btn-default" href="#work" >work</a>
+                    <a class="nav-link btn-default" href="<?php echo site_url('/portfolio'); ?>" >work</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn-default" href="#about"  data-toggle="modal" data-target="#about" >about</a>
+                    <a class="nav-link btn-default" href="<?php echo site_url('/saibamais'); ?>"  data-toggle="modal" data-target="#about" >about</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn-default" href="mailto:hello@tigela.co">contact</a>

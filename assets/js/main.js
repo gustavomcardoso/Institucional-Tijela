@@ -2,7 +2,9 @@ var $ = jQuery;
 
 const containerWidth = $(window).width(); 
 const mobile = containerWidth <= 992;
+
 if (!mobile) {
+
   const sceneBox = document.getElementById("scene-header-box");
 
   if(sceneBox) {
@@ -13,7 +15,7 @@ if (!mobile) {
     const parallaxInstanceBox = new Parallax(sceneBox);
 
     const firstParallax = new Parallax(firstScene, {
-      pointerEvents: true
+      pointerEvents: true,
     });
   
     const aboutParallax = new Parallax(aboutScene, {
@@ -57,7 +59,9 @@ if (!mobile) {
     });
   } 
 
+  
 }
+
 
 
 const imgarray = $('.arch-card').each(function(){});
@@ -109,23 +113,35 @@ function changeONOf() {
 
 
 const headerhome = document.getElementById('scene-header-box')
-if (headerhome){
+if (headerhome && mobile !== true){
   headerhome.addEventListener( 'click', modifyTo);
 }
+if (headerhome && mobile == true){
+  headerhome.addEventListener( 'click', modifyToMobile);
+}
+
 function modifyTo(){
   const palco = document.getElementById('scene-header-box')
   const assistir = palco.classList.contains('assistir')
-  palco.innerHTML = '<div class="container" data-depth="0.2" style="transform: translate3d(-22.2px, -1.5px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><iframe src="https://player.vimeo.com/video/563034387?h=82e82628b8&autoplay=1&title=0&byline=0&portrait=0&background=1&muted=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div> <div class="box-play" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"></div>';
+    palco.innerHTML = '<div class="container" data-depth="0.2" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><iframe src="https://player.vimeo.com/video/563034387?h=82e82628b8&autoplay=1&title=0&byline=0&portrait=0&background=1&muted=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div> <div class="box-play" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"></div>';
+    palco.classList.add('assistir')
+    $('.arrow-down').hide();
+
+    if(assistir) {
+      palco.innerHTML = '<div class="container" data-depth="0.2" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><iframe src="https://player.vimeo.com/video/563034387?autoplay=1&loop=1&autopause=0&title=0&byline=0&background=1&muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-depth="0.4"></iframe></div><div class="box-play" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"><a class="button-play"> Assista o Vídeo</a></div>'
+      palco.classList.remove('assistir')
+      $('.arrow-down').show();
+    }
+} 
+
+function modifyToMobile(){
+  const palco = document.getElementById('scene-header-box')
+  palco.innerHTML = '<div class="container"><iframe id="iframemobile" src="https://player.vimeo.com/video/563034387?h=82e82628b8&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div> <div class="box-play" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"></div>';
   palco.classList.add('assistir')
-  $('.arrow-down').hide();
-
-  if(assistir) {
-    palco.innerHTML = '<div class="container" data-depth="0.2" style="transform: translate3d(-22.2px, -1.5px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;"><iframe src="https://player.vimeo.com/video/563034387?autoplay=1&loop=1&autopause=0&title=0&byline=0&background=1&muted=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-depth="0.4"></iframe></div><div class="box-play" data-depth="0.4" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"><a class="button-play"> Assista o Vídeo</a></div>'
-    palco.classList.remove('assistir')
-    $('.arrow-down').show();
-  }
-};
-
+  $('.box-play').hide();
+  headerhome.removeAttribute('id');
+}
+  
 
 $('#modal-0').on('show.bs.modal', function (e) {
   const link = $('#btn-play').attr('link');
@@ -145,4 +161,3 @@ $('#modal-1').on('hide.bs.modal', function (e) {
 
 const link2 = $('#singlepage iframe').attr('link');
 $('#singlepage iframe').attr('src', link2);
-

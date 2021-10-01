@@ -10,7 +10,7 @@ include get_template_directory() . ('/templates/nav.php');
   <div class="container" data-depth="0.2">
     <iframe src="https://player.vimeo.com/video/563034387?autoplay=1&loop=1&autopause=0&title=0&byline=0&background=1&muted=1" frameborder="0" allow="autoplay" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen data-depth="0.4"> </iframe>
   </div>
-  <div class="box-play" data-depth="0.4">
+  <div class="box-play" data-depth="0.4" id="watch">
     <a class="button-play"> Assista ao Vídeo</a>
   </div>
 </header>
@@ -26,7 +26,7 @@ include get_template_directory() . ('/templates/nav.php');
 
 
 <section id="first-section" class="py-5">
-  <div class="about-pattern" data-depth="0.4">
+  <div class="about-pattern d-none d-lg-block" data-depth="0.4">
     <svg width="300" height="408" viewBox="0 0 300 408" fill="none" style="
     left: 100px;
     top: -100px;
@@ -66,7 +66,7 @@ include get_template_directory() . ('/templates/nav.php');
 
   <div data-depth="0.2" class="container-fluid">
     <div class="row py-5" id="scene-about">
-      <div class="col-12 pl-5 text-center py-5">
+      <div class="col-12 pl-lg-5 text-center py-5">
         <h2 class="c-teal triade">
           a tigela é um estúdio<br class="d-none d-lg-block" />
           multidisciplinar independente
@@ -78,7 +78,7 @@ include get_template_directory() . ('/templates/nav.php');
         </p>
       </div>
       <div class="col-12 text-center">
-        <a href="<?php echo site_url('/saibamais'); ?>" class="btn-default triade c-purple"> saiba mais</a>
+        <a href="<?php echo site_url('/sobre'); ?>" class="btn-default triade c-purple"> saiba mais</a>
       </div>
     </div>
   </div>
@@ -106,7 +106,7 @@ include get_template_directory() . ('/templates/nav.php');
 
 
         <div class="vitrine col-12 offset-lg-5 col-lg-7" id="second-vitrine">
-          <a img="<?php echo $src ?>" href="<?php the_permalink(); ?>" class="vitrine-content" data-depth="0.8" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+          <a img="<?php echo $src ?>" href="<?php the_permalink(); ?>" class="vitrine-content" data-depth="0.8">
             <div>
               <h3 class="c-white bold"><?php the_title(); ?></h3>
               <legend class="c-white"><?php echo $custom_field2 ?></legend>
@@ -130,7 +130,7 @@ include get_template_directory() . ('/templates/nav.php');
 
       <?php else : ?>
         <div class="vitrine col-12 col-lg-7" id="first-vitrine">
-          <a img="<?php echo $src ?>" href="<?php the_permalink(); ?>" class="vitrine-content" data-depth="0.8" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; right: 0px; top: 0px;">
+          <a img="<?php echo $src ?>" href="<?php the_permalink(); ?>" class="vitrine-content" data-depth="0.8">
             <div>
               <h3 class="c-white bold"><?php the_title(); ?></h3>
               <legend class="c-white"><?php echo $custom_field2 ?></legend>
@@ -163,7 +163,7 @@ include get_template_directory() . ('/templates/nav.php');
 
 
 
-<section class="mt-5 py-5">
+<section class="mt-5 py-lg-5">
   <div class="container pt-5">
     <div class="row">
 
@@ -190,7 +190,7 @@ include get_template_directory() . ('/templates/nav.php');
 </section>
 
 <section class="mb-5" id="vermais">
-  <div class="about-pattern" data-depth="0.4">
+  <div class="about-pattern d-none d-lg-block" data-depth="0.4">
       <svg width="300" height="308" viewBox="0 0 300 308" fill="none" style="left: 100px; top: 40px;">
         <g clip-path="url(#clip2)" class="rotate-to-right">
           <path d="M169.975 62.3429C172.336 59.373 175.164 57.021 178.265 55.2951C182.915 52.7105 188.188 51.5424 193.374 51.8884C198.563 52.2367 203.659 54.0837 208.009 57.5415C210.91 59.8476 213.185 62.6375 214.831 65.7162C217.296 70.3333 218.337 75.6085 217.874 80.8316C217.406 86.0607 215.449 91.225 211.912 95.6807L215.884 98.8383C218.682 95.3185 220.661 91.3992 221.826 87.3406C223.577 81.2483 223.513 74.8414 221.723 68.9267C219.933 63.0121 216.403 57.5779 211.245 53.4773C207.807 50.7443 203.95 48.847 199.941 47.7653C193.919 46.1439 187.543 46.3558 181.617 48.2913C175.691 50.2269 170.204 53.9012 166.005 59.1823L169.977 62.3399L169.975 62.3429Z" fill="#CBB0F6"></path>

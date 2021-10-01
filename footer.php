@@ -6,7 +6,7 @@ $home = get_template_directory_uri();
 <section id="footer">
 
 <div class="container mb-3">
-    <div class="row">
+    <div class="row pt-3">
         <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center">
             <a class="navbar-brand m-0 p-0" id="navbrand" href="<?php echo home_url(''); ?>">
                 <img src="<?php echo $home ?>/assets/img/logo.gif">

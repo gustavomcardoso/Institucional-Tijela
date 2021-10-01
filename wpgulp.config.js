@@ -110,19 +110,19 @@ const zipIgnoreGlob = [
 
 // >>>>> Translation options.
 // Your text domain here.
-const textDomain = 'layback';
+const textDomain = 'Tigela';
 
 // Name of the translation file.
-const translationFile = 'layback.pot';
+const translationFile = 'Tigela.pot';
 
 // Where to save the translation files.
 const translationDestination = './languages';
 
 // Package name.
-const packageName = 'layback';
+const packageName = 'Tigela';
 
 // Where can users report bugs.
-const bugReport = 'https://layback.com/';
+const bugReport = 'https://tigela.com/';
 
 // Last translator Email ID.
 const lastTranslator = 'Ahmad Awais <your_email@email.com>';
