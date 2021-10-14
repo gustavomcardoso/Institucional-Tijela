@@ -78,7 +78,7 @@ include get_template_directory() . ('/templates/nav.php');
         </p>
       </div>
       <div class="col-12 text-center">
-        <a href="<?php echo site_url('/sobre'); ?>" class="btn-default triade c-purple"> saiba mais</a>
+        <a href="<?php echo site_url('/about'); ?>" class="btn-default triade c-purple"> saiba mais</a>
       </div>
     </div>
   </div>
@@ -172,6 +172,7 @@ include get_template_directory() . ('/templates/nav.php');
       if ( $maxpost3-> have_posts() ) : while ( $maxpost3-> have_posts() ) : $maxpost3-> the_post(); 
       if ( in_array( $post->ID, $do_not_duplicate ) ) continue; 
       $src = get_the_post_thumbnail_url(get_the_ID(), 'full');
+      $custom_field2 = get_field('legenda');
       ?>
 
       <div class="col-12 col-lg-4 my-3 my-lg-0">
@@ -183,7 +184,7 @@ include get_template_directory() . ('/templates/nav.php');
         </a>
       </div>
 
-    <?php endwhile; endif; ?>
+    <?php endwhile; endif; ?> 
 
     </div>
   </div>
@@ -221,7 +222,7 @@ include get_template_directory() . ('/templates/nav.php');
 
     <div class="row">
       <div class="col-12 col-lg-6 offset-lg-3 d-flex justify-content-center ver-mais-footer ">
-        <a href="<?php echo site_url('/saibamais'); ?>" class="ver-mais-footer d-flex align-items-center">
+        <a href="<?php echo site_url('/works'); ?>" class="ver-mais-footer d-flex align-items-center">
           <p class="">
             Clique aqui para ver <br> mais projetos
           </p>

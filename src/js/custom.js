@@ -132,14 +132,14 @@ function modifyToMobile() {
 }
 
 $('#modal-0').on('show.bs.modal', function (e) {
-  var link = $('#btn-play').attr('link');
+  var link = $('#btn-play2').attr('link');
   $('#modal-0 iframe').attr('src', link);
 });
 $('#modal-0').on('hide.bs.modal', function (e) {
   $('#modal-0 iframe').attr('src', '');
 });
 $('#modal-1').on('show.bs.modal', function (e) {
-  var link = $('#btn-play2').attr('link');
+  var link = $('#btn-play').attr('link');
   $('#modal-1 iframe').attr('src', link);
 });
 $('#modal-1').on('hide.bs.modal', function (e) {
